@@ -1,0 +1,30 @@
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.search {
+    text-align: center;
+}
+
+.table {
+    margin-top: 20px;
+}
+
+/* override TableStyle-Normal class */
+.TableStyle-Normal
+{
+    width: 100%;
+}
+
+/* classes for display of approved and banned words in the table */
+.TableStyle-Normal .wordApproved {
+    background-color: rgb(214, 245, 213);
+}
+
+.TableStyle-Normal .wordBanned{
+    background-color: rgb(245, 205, 206);
+}
+
+body {
+
+}
