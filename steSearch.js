@@ -16,6 +16,8 @@ function steSearch() {
     // store input from searchWord in a variable 
     let input = inputBox.value;
 
+    if (input != "") {
+      
         // create table
         let table = document.createElement("table");
         table.classList.add("TableStyle-Normal");
@@ -40,6 +42,7 @@ function steSearch() {
         let tbody = document.createElement("tbody");
         table.appendChild(tbody);
 
+        // fetch JSON file of STE terms.
         fetch("./steTerm.json")
             .then(response => {
                 return response.json();
@@ -77,3 +80,4 @@ function steSearch() {
                 }
             });
             }
+        }
