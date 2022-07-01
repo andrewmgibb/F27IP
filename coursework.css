@@ -55,20 +55,20 @@ table {
     font-size: medium;
 }
 
-.tableRow {
+tr {
     border: 1px solid;
     text-align: left;
 }
 
-.tableData {
-    border: 1px solid;
+td {
+    border: inherit;
 }
 
 /* classes for display of approved and banned words in the table */
-.tableData .wordApproved {
+td.wordApproved {
     background-color: rgb(214, 245, 213);
 }
 
-.tableData .wordBanned {
+td.wordBanned {
     background-color: rgb(245, 205, 206);
 }
