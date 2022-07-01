@@ -15,6 +15,7 @@
             <label for="searchword">Enter a word:</label>
             <input type="text" id="searchword" name="searchword" value="ab">
             <button onclick="steSearch()">Search!</button>
+            <p id="notFound"></p>
         </div>
 
         <div class="table" id="tablediv"></div>
@@ -88,7 +89,7 @@
                                 }
 
                                 
-                            }
+                            } else document.getElementById("notFound").innerHTML = input + " is not found in the terminology database. Please enter another word."
                 }
             }
         </script>
