@@ -20,21 +20,19 @@ function steSearch() {
       
         // create table
         let table = document.createElement("table");
-        table.classList.add("TableStyle-Normal");
         document.getElementById("tablediv").appendChild(table);
 
         // create table header
         let thead = document.createElement("thead");
         table.appendChild(thead);
         let headrow = document.createElement("tr");
-        headrow.classList.add("TableStyle-Normal-Head-Header1")
         thead.appendChild(headrow);
 
         // loop through header array to create table headers
         for (j = 0; j < header.length; j++){
             let th = document.createElement("th");
             th.innerHTML = header[j];
-            th.classList.add("TableStyle-Normal-HeadE-Column1-Header1")
+            th.classList.add("tableHead")
             headrow.appendChild(th);
         }
 
@@ -43,7 +41,7 @@ function steSearch() {
         table.appendChild(tbody);
 
         // fetch JSON file of STE terms.
-        fetch("./steTerm.json")
+        fetch("steTerm.json")
             .then(response => {
                 return response.json();
             })
@@ -54,7 +52,7 @@ function steSearch() {
                     if(ste[i].word.includes(input)){
 
                         let trow = document.createElement("tr");
-                        trow.classList.add("TableStyle-Normal-Body-Body1");
+                        trow.classList.add("tableRow");
                         tbody.appendChild(trow);
 
                         var entry = ste[i];
@@ -70,7 +68,7 @@ function steSearch() {
                                     td.classList.add("wordApproved");
                                 } else td.classList.add("wordBanned");
 
-                            td.classList.add("TableStyle-Normal-BodyE-Column1-Body1");
+                            td.classList.add("tableData");
 
                             trow.appendChild(td);
                         }

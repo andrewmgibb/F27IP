@@ -2,5 +2,6 @@
     {"word": "abaft", "approved":false, "speech": "preposition", "appword": "aft of", "app-example": "The control unit is installed aft of the flight compartment.", "not-app-example": "The control unit is installed abaft the flight compartment"},
     {"word": "abandon", "approved":false, "speech": "verb", "appword": "stop", "app-example": "Stop the engine start procedure.", "not-app-example": "Abandon the engine start procedure."},
     {"word": "abate", "approved":false, "speech": "verb", "appword": "decrease", "app-example": "When the wind speed decreases to less than 30 knots, you can open the cargo door.", "not-app-example": "When the wind speed abates to less than 30 knots, you can open the cargo door."},
+    {"word": "something", "approved":"true", "speech": "", "appword": "", "app-example": "", "not-app-example": ""},
     {"word": "", "approved":"", "speech": "", "appword": "", "app-example": "", "not-app-example": ""}
 ]
