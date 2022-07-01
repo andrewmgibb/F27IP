@@ -65,10 +65,10 @@ table {
 }
 
 /* classes for display of approved and banned words in the table */
-.wordApproved .tableData {
+.tableData .wordApproved {
     background-color: rgb(214, 245, 213);
 }
 
-.wordBanned .tableData {
+.tableData .wordBanned {
     background-color: rgb(245, 205, 206);
 }
