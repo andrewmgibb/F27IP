@@ -2,6 +2,18 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+    text-align: center;
+}
+
+h1 {
+    font-size: large;
+}
+
+p {
+    font-size: small;
+}
+
 .search {
     text-align: center;
 }
@@ -23,8 +35,4 @@
 
 .TableStyle-Normal .wordBanned{
     background-color: rgb(245, 205, 206);
-}
-
-body {
-
 }
