@@ -1,30 +1,103 @@
 :root {
+    /* color variables */
+    --tan: #a38560ff;
+    --white: #ffffffff;
+    --light-blue: #2e5077ff;
+    --dark-blue: #18206fff;
+    --warning-orange: #F9A800;
+    --dark-grey: #35383b;
+
+    /* font family */
     font-family: Arial, Helvetica, sans-serif;
+
+    /* variable for border style */
+    --border: 10px solid var(--tan);
+
+    /* margin for body text */
+    --body-margin: 10px 10px;
+}
+
+/* header with top margin in tan */
+header{
+    background-color: var(--light-blue);
+    color: var(--white);
+    padding: 20px;
+    text-align: center;
+    border-top: var(--border);
+}
+
+.notFound {
+    background-color: var(--warning-orange);
+    font-size: large;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    text-align: center;
+}
+
+h1 {
+    font-size: large;
+}
+
+p {
+    font-size: small;
 }
 
 .search {
     text-align: center;
 }
 
-.table {
+table {
     margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid;
+    border-collapse: collapse;
+    width: 90%;
 }
 
-/* override TableStyle-Normal class */
-.TableStyle-Normal
-{
-    width: 100%;
+.tableHead {
+    background-color: var(--light-blue);
+    color: var(--white);
+    text-align: center;
+    font-size: medium;
+    position: relative;
+}
+
+.toolTip {
+    visibility: hidden;
+    background-color: var(--dark-grey);
+    color: var(--white);
+    font-size: smaller;
+    text-align: left;
+    border-radius: 4px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    width: 15vw;
+}
+  
+.tableHead:hover .toolTip {
+visibility: visible;
+}
+
+tr {
+    border: 1px solid;
+    text-align: left;
+}
+
+td {
+    border: inherit;
 }
 
 /* classes for display of approved and banned words in the table */
-.TableStyle-Normal .wordApproved {
+td.wordApproved {
     background-color: rgb(214, 245, 213);
 }
 
-.TableStyle-Normal .wordBanned{
+td.wordBanned {
     background-color: rgb(245, 205, 206);
-}
-
-body {
-
 }

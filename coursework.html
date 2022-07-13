@@ -7,25 +7,38 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="coursework.css">
-        <link rel="stylesheet" href="https://style-guide.3di-info.com/Resources/TableStyles/Normal.css">
 
     </head>
     <body>
+        <header>
         <h1>Simplified Technical English Dictionary</h1>
         <p>This website can be used to search the dictionary of the <b>Simplified Technical English</b> standard.</p>
+        </header>
         
-        <p>The <b>Simplified Technical English</b> standard is a controlled language for use in English technical documentation.</p>
+        <p>The <b>Simplified Technical English</b> (STE) standard is a controlled language for use in English technical documentation.</p>
         <p>The dictionary of the standard shows words which are <i>approved</i> and <i>non-approved</i> according to the standard. Alternatives to <i>non-approved</i> words and definitions for words used in the standard are also shown.</p>
         <p>For more information about the <b>Simplified Technical English</b> standard, see the <a href="https://asd-ste100.org/">Simplified Technical English Management Group</a> website</p>
-        
+        <p>Hover over a heading in the table below for a detailed description of the information.</p>
         <div class="search">
-            <label for="searchWord">Enter a word:</label>
-            <input type="text" id="searchWord" name="searchWord" value="ab">
-            <button id="searchButton" onclick="steSearch()">Search!</button>
-            <p id="notFound"></p>
+            <input type="text" id="searchWord" name="searchWord" placeholder="Enter a word..." onkeyup="steSearch()">
         </div>
 
-        <div class="table" id="tablediv"></div>
+        <p class="notFound" id="notFound"></p>
+        <div class="table" id="tablediv">
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th class="tableHead">Word<span class="toolTip">Select a word to be taken to a dictionary definition of the word.</span></th>
+                        <th class="tableHead">Approved<span class="toolTip">Defines if the word is approved under the STE standard.</span></th>
+                        <th class="tableHead">Part of speech<span class="toolTip">Defines the part of speech that the word is approved for. For example, some words may be approved as a noun but not as a verb.</span></th>
+                        <th class="tableHead">Approved meaning/ alternatives<span class="toolTip">Defines the approved meaning of the word and shows an alternative word which can be used if the word is not approved.</span></th>
+                        <th class="tableHead">Approved example<span class="toolTip">Gives an example of the correct use of the word.</span></th>
+                        <th class="tableHead">Not approved example<span class="toolTip">Gives an example of the incorrect use of the word.</span></th>
+                    </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
         <script type="text/javascript" src="steSearch.js"></script>
     </body>
 </html>

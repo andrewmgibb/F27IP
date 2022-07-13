@@ -1,49 +1,31 @@
+// click searchButton on pressing enter
+let inputBox = document.getElementById("searchWord");
+inputBox.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        document.getElementById("searchButton").click();
+    }
+});
+
 function steSearch() {
 
-    document.getElementById("tablediv").innerHTML = "";
+    // clear table each time function is called
+    document.getElementById("tbody").innerHTML = "";
 
-    // array of table headers
-    var header = ["Word", "Approved", "Part of speech", "Approved meaning/ alternatives", "Approved example", "Not approved example"];
-    
-    // click searchButton on pressing enter
-    let inputBox = document.getElementById("searchWord");
-    inputBox.addEventListener("keypress", function(event) {
-        if (event.key === "Enter") {
-          document.getElementById("searchButton").click();
-        }
-      });
+    // clear not found function
+    document.getElementById("notFound").innerHTML = "";
 
-    // store input from searchWord in a variable 
-    let input = inputBox.value;
+    // store input from searchWord in a variable as lowercase
+    let input = inputBox.value.toLowerCase();
 
+    // check for empty input
     if (input != "") {
-      
-        // create table
-        let table = document.createElement("table");
-        table.classList.add("TableStyle-Normal");
-        document.getElementById("tablediv").appendChild(table);
 
-        // create table header
-        let thead = document.createElement("thead");
-        table.appendChild(thead);
-        let headrow = document.createElement("tr");
-        headrow.classList.add("TableStyle-Normal-Head-Header1")
-        thead.appendChild(headrow);
+        // fetch JSON file and create table body
+        createBody();        
+    }
 
-        // loop through header array to create table headers
-        for (j = 0; j < header.length; j++){
-            let th = document.createElement("th");
-            th.innerHTML = header[j];
-            th.classList.add("TableStyle-Normal-HeadE-Column1-Header1")
-            headrow.appendChild(th);
-        }
-
-        // create table body
-        let tbody = document.createElement("tbody");
-        table.appendChild(tbody);
-
-        // fetch JSON file of STE terms.
-        fetch("./steTerm.json")
+    function createBody() {
+        fetch("steTerm.json")
             .then(response => {
                 return response.json();
             })
@@ -51,33 +33,50 @@ function steSearch() {
 
                 // search for matching word and create result table row
                 for (i = 0; i < ste.length; i++) {
-                    if(ste[i].word.includes(input)){
+                    if (ste[i].word.includes(input)) {
+
+                        // // create table body
+                        // let tbody = document.createElement("tbody");
+                        // tbody.setAttribute("id", "tbody");
+                        // table.appendChild(tbody);
 
                         let trow = document.createElement("tr");
-                        trow.classList.add("TableStyle-Normal-Body-Body1");
-                        tbody.appendChild(trow);
+                        document.getElementById("tbody").appendChild(trow);
 
                         var entry = ste[i];
 
-                        let keys = Object.keys(ste[i]);
-
                         for (k in entry) {
                             let td = document.createElement("td");
-                            td.innerHTML = entry[k];
 
-                                // if statement to check if word is approved
-                                if(ste[i].approved){
-                                    td.classList.add("wordApproved");
-                                } else td.classList.add("wordBanned");
+                            // set id to the key (k)
+                            td.classList.add(k);
 
-                            td.classList.add("TableStyle-Normal-BodyE-Column1-Body1");
+                            // if the key is "word", create a hyperlink to dictionary.com entry
+                            if (td.className == "word") {
+                                let a = document.createElement('a');
+                                a.href = "https://www.dictionary.com/browse/" + entry[k];
+                                a.target = "_blank";
+                                a.innerText = entry[k];
+                                td.appendChild(a);
+                            } else
+                                td.innerHTML = entry[k];
+
+                            // if statement to check if word is approved
+                            if (ste[i].approved) {
+                                td.classList.add("wordApproved");
+                            } else
+                                td.classList.add("wordBanned");
 
                             trow.appendChild(td);
                         }
+                    }
+                }
 
-                        
-                    } else document.getElementById("notFound").innerHTML = input + " is not found in the terminology database. Please enter another word."
+                // check if no words have been found and display message. If no words haave been found, there will be no elements with the "word" class
+                if (document.getElementsByClassName("word").length == 0){
+                    let capsword = String(input).charAt(0).toUpperCase() + String(input).slice(1);
+                    document.getElementById("notFound").innerHTML = capsword + " is not found in the terminology database. Please enter another word.";
                 }
             });
-            }
-        }
+    }
+}

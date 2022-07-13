@@ -2,5 +2,13 @@
     {"word": "abaft", "approved":false, "speech": "preposition", "appword": "aft of", "app-example": "The control unit is installed aft of the flight compartment.", "not-app-example": "The control unit is installed abaft the flight compartment"},
     {"word": "abandon", "approved":false, "speech": "verb", "appword": "stop", "app-example": "Stop the engine start procedure.", "not-app-example": "Abandon the engine start procedure."},
     {"word": "abate", "approved":false, "speech": "verb", "appword": "decrease", "app-example": "When the wind speed decreases to less than 30 knots, you can open the cargo door.", "not-app-example": "When the wind speed abates to less than 30 knots, you can open the cargo door."},
+    {"word": "accept", "approved":true, "speech": "verb", "appword": "", "app-example": "Accept the relay if it is servicable.", "not-app-example": ""},
+    {"word": "access", "approved":true, "speech": "noun", "appword": "", "app-example": "Get access to the accumulator for the No. 1 hydraulic system.", "not-app-example": ""},
+    {"word": "accessible", "approved":false, "speech": "noun", "appword": "access", "app-example": "Turn the cover until you can get access to the jacks.", "not-app-example": "Rotate the cover until the jacks marked by + and - are accessible."},
+    {"word": "accommodate", "approved":false, "speech": "verb", "appword": "let", "app-example": "Different lengths of studs let youattach different thicknesses of skin.", "not-app-example": "Studs are available in different lengths to accommodate different thicknesses of skin."},
+    {"word": "end", "approved":true, "speech": "noun", "appword": "", "app-example": "Examine the shackle at the end of the sling.", "not-app-example": ""},
+    {"word": "end", "approved":false, "speech": "verb", "appword": "stop", "app-example": "Stop the test.", "not-app-example": "End the test."},
+    {"word": "rotate", "approved":false, "speech": "verb", "appword": "turn", "app-example": "Slowly turn the vane.", "not-app-example": "Slowly rotate the vane."},
+    {"word": "standard", "approved":true, "speech": "verb", "appword": "", "app-example": "In this procedure, use standard tools.", "not-app-example": ""},
     {"word": "", "approved":"", "speech": "", "appword": "", "app-example": "", "not-app-example": ""}
 ]
